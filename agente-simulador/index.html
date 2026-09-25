@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Simulador demonstrativo de agente de atendimento para a Clínica Dra. Jordana de Fáveri." />
+    <title>Agente Jordana · Simulação GPTMaker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="intro-panel">
+        <div class="brand-mark" aria-hidden="true">JF</div>
+        <p class="eyebrow">Simulação de atendimento · GPTMaker</p>
+        <h1>Uma conversa que acolhe antes de encaminhar.</h1>
+        <p class="intro-copy">Esta é uma demonstração independente do agente que pode atender dúvidas, organizar intenções e preparar o próximo passo da paciente.</p>
+        <div class="status-pill"><span></span> Agente em demonstração</div>
+        <div class="intro-meta">
+          <span>Clínica de Estética</span>
+          <span>Centro · Florianópolis/SC</span>
+        </div>
+      </aside>
+
+      <section class="chat-panel" aria-labelledby="chat-title">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">Atendimento inicial</p>
+            <h2 id="chat-title">Agente Jordana</h2>
+          </div>
+          <button class="reset-button" type="button" data-reset>Recomeçar</button>
+        </header>
+
+        <div class="chat-log" data-chat-log aria-live="polite" aria-label="Conversa com o agente"></div>
+
+        <div class="suggestions" data-suggestions aria-label="Perguntas sugeridas">
+          <button type="button" data-suggestion="Onde fica a clínica e qual é o horário?">Onde fica a clínica?</button>
+          <button type="button" data-suggestion="Quais procedimentos vocês oferecem?">Quais cuidados vocês oferecem?</button>
+          <button type="button" data-suggestion="Como funciona a primeira conversa?">Como funciona a primeira visita?</button>
+          <button type="button" data-suggestion="Quero falar com a equipe.">Quero falar com a equipe</button>
+        </div>
+
+        <form class="composer" data-chat-form>
+          <label class="sr-only" for="message">Digite sua pergunta</label>
+          <textarea id="message" rows="1" maxlength="600" placeholder="Digite qualquer pergunta sobre a clínica…" data-message required></textarea>
+          <button type="submit" aria-label="Enviar pergunta">Enviar <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="disclaimer">Demonstração local para apresentação. Não substitui avaliação profissional, não agenda horários e não envia dados.</p>
+      </section>
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>
