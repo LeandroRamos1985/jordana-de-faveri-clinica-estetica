@@ -36,10 +36,10 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 | 28 | Search Console | Atenção | Sitemap e canonical preparados; verificação depende do domínio |
 | 29 | Links quebrados | Atenção | Smoke test estático; navegador real pendente |
 | 30 | Indexabilidade | Aprovado | Site público e indexável; robots/sitemap configurados |
-| 31 | Compressão de imagens | Atenção | Sem ativos locais; poster remoto precisa de licença e otimização |
-| 32 | Formatos modernos | Atenção | Poster remoto; converter ativo aprovado antes da produção |
+| 31 | Compressão de imagens | Atenção | Poster local em PNG (~1,8 MB); otimização adicional pendente |
+| 32 | Formatos modernos | Atenção | Ainda falta gerar versões WebP/AVIF do poster local |
 | 33 | Lazy loading | Atenção | Vídeo usa metadata; imagens de conteúdo ainda não existem |
-| 34 | Lighthouse | Atenção | Executar após servidor local e domínio de demonstração |
+| 34 | Lighthouse | Atenção | Lighthouse ainda não executado; medição real de desempenho pendente |
 | 35 | Core Web Vitals | Atenção | Não há dados de campo; observar LCP/CLS/INP no teste |
 | 36 | Fontes/CSS/JS | Atenção | CSS e JS sem build; Google Fonts remoto |
 | 37 | HTTPS/SSL | Aprovado | GitHub Pages publicado em HTTPS |
@@ -74,7 +74,7 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 | 66 | WhatsApp/telefone/e-mail | Atenção | Telefone linkado; WhatsApp e e-mail não confirmados |
 | 67 | Auditoria SEO | Atenção | Metadata e schema preparados; Lighthouse pendente |
 | 68 | Acessibilidade básica | Atenção | Labels, foco, skip link e reduced motion preparados; axe/manual pendente |
-| 69 | Auditoria de performance | Atenção | Servidor e navegador ainda necessários |
+| 69 | Auditoria de performance | Atenção | Auditoria automatizada de performance ainda pendente |
 | 70 | Auditoria de segurança | Atenção | Sem backend; headers dependem do host |
 | 71 | Domínio/SSL | Aprovado | URL padrão do GitHub Pages vinculada e publicada |
 | 72 | Site Quality Score | Atenção | Score final só após testes desktop/mobile e correções |
@@ -104,4 +104,5 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 - Simulador público: **Aprovado** — três escolhas produziram resumo local com “Conhecer a clínica”, “Primeira visita” e “Manhã”.
 - Formulário público: **Aprovado** — dados fictícios e consentimento produziram o estado “Demonstração local: nada foi enviado”.
 - Auditoria mobile: **Atenção** — CSS responsivo está implementado, mas o ambiente não ofereceu viewport móvel automatizado nesta sessão.
+
 
