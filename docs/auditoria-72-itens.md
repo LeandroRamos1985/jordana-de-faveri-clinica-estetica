@@ -25,9 +25,9 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 | 17 | Breadcrumbs | Não aplicável | Site curto, sem hierarquia profunda |
 | 18 | FAQ e schema aplicável | Atenção | FAQ visível; FAQ Schema não adicionado sem necessidade |
 | 19 | URLs amigáveis | Atenção | Página estática e privacy.html |
-| 20 | Canonical | Atenção | URL de exemplo deve ser substituída pelo domínio real |
-| 21 | robots.txt | Atenção | Criado com URL de exemplo |
-| 22 | sitemap.xml | Atenção | Criado com URL de exemplo |
+| 20 | Canonical | Aprovado | URL pública do GitHub Pages configurada |
+| 21 | robots.txt | Aprovado | Sitemap aponta para a URL pública |
+| 22 | sitemap.xml | Aprovado | Home e privacy.html com URL pública |
 | 23 | 404 personalizada | Aprovado | 404.html criada |
 | 24 | Favicon | Aprovado | SVG JF criado |
 | 25 | Open Graph | Atenção | Metadata criada; imagem social explícita ainda não solicitada |
@@ -35,14 +35,14 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 | 27 | LocalBusiness schema | Atenção | BeautySalon JSON-LD preparado; revisão jurídica pendente |
 | 28 | Search Console | Atenção | Sitemap e canonical preparados; verificação depende do domínio |
 | 29 | Links quebrados | Atenção | Smoke test estático; navegador real pendente |
-| 30 | Indexabilidade | Atenção | robots/sitemap de exemplo |
+| 30 | Indexabilidade | Aprovado | Site público e indexável; robots/sitemap configurados |
 | 31 | Compressão de imagens | Atenção | Sem ativos locais; poster remoto precisa de licença e otimização |
 | 32 | Formatos modernos | Atenção | Poster remoto; converter ativo aprovado antes da produção |
 | 33 | Lazy loading | Atenção | Vídeo usa metadata; imagens de conteúdo ainda não existem |
 | 34 | Lighthouse | Atenção | Executar após servidor local e domínio de demonstração |
 | 35 | Core Web Vitals | Atenção | Não há dados de campo; observar LCP/CLS/INP no teste |
 | 36 | Fontes/CSS/JS | Atenção | CSS e JS sem build; Google Fonts remoto |
-| 37 | HTTPS/SSL | Atenção | GitHub Pages oferece HTTPS após publicação |
+| 37 | HTTPS/SSL | Aprovado | GitHub Pages publicado em HTTPS |
 | 38 | Headers de segurança | Atenção | Compatíveis com hospedagem estática; headers dependem do host |
 | 39 | Anti-spam | Não aplicável | Formulário não envia dados na demonstração; implementar ao conectar |
 | 40 | Tratamento seguro | Aprovado | Nenhum dado deixa o navegador nesta versão |
@@ -66,17 +66,17 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 | 58 | Avaliações sem fabricação | Aprovado | Excertos de fonte pública, identificados |
 | 59 | Conteúdo local | Aprovado | Centro de Florianópolis e Estação Milano incorporados |
 | 60 | Conteúdo regulamentado | Atenção | Claims clínicos evitados; revisão profissional pendente |
-| 61 | Teste desktop | Atenção | Executar auditoria visual real |
+| 61 | Teste desktop | Aprovado | Navegador real confirmou home, links, simulador e formulário |
 | 62 | Teste mobile | Atenção | Executar auditoria visual real |
-| 63 | Todos os formulários | Atenção | Formulário demo criado; teste no navegador pendente |
-| 64 | Todos os CTAs | Atenção | Destinos codificados; verificação visual pendente |
-| 65 | Links externos | Atenção | Maps e fontes externas; checar no navegador |
+| 63 | Todos os formulários | Aprovado | Formulário preenchido com dados fictícios; estado local confirmado |
+| 64 | Todos os CTAs | Aprovado | Hero, simulador, contato, rotas e política verificados no navegador |
+| 65 | Links externos | Aprovado | Google Maps e links públicos resolvidos na página publicada |
 | 66 | WhatsApp/telefone/e-mail | Atenção | Telefone linkado; WhatsApp e e-mail não confirmados |
 | 67 | Auditoria SEO | Atenção | Metadata e schema preparados; Lighthouse pendente |
 | 68 | Acessibilidade básica | Atenção | Labels, foco, skip link e reduced motion preparados; axe/manual pendente |
 | 69 | Auditoria de performance | Atenção | Servidor e navegador ainda necessários |
 | 70 | Auditoria de segurança | Atenção | Sem backend; headers dependem do host |
-| 71 | Domínio/SSL | Atenção | URL de exemplo; GitHub Pages ainda não vinculado |
+| 71 | Domínio/SSL | Aprovado | URL padrão do GitHub Pages vinculada e publicada |
 | 72 | Site Quality Score | Atenção | Score final só após testes desktop/mobile e correções |
 
 ## Evidências de implementação
@@ -100,3 +100,7 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 - `node --check script.js`: **Aprovado** — sintaxe JavaScript válida.
 - Servidor local e requisições HTTP para `/`, `/privacy.html`, `/404.html`, `/styles.css` e `/script.js`: **Aprovado** — respostas 200.
 - Navegador integrado em desktop/mobile: **Atenção** — o ambiente bloqueou a abertura de páginas locais por política de URL; não foi possível registrar screenshots ou interação real nesta etapa.
+- Página pública em navegador real: **Aprovado** — https://leandroramos1985.github.io/jordana-de-faveri-clinica-estetica/ abriu com conteúdo, navegação e formulário.
+- Simulador público: **Aprovado** — três escolhas produziram resumo local com “Conhecer a clínica”, “Primeira visita” e “Manhã”.
+- Formulário público: **Aprovado** — dados fictícios e consentimento produziram o estado “Demonstração local: nada foi enviado”.
+- Auditoria mobile: **Atenção** — CSS responsivo está implementado, mas o ambiente não ofereceu viewport móvel automatizado nesta sessão.
