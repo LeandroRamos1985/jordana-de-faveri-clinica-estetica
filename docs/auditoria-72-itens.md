@@ -61,7 +61,7 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 | 53 | Telefone conferido | Aprovado | Número coincide com Maps; ligação não realizada |
 | 54 | Endereço/horários | Aprovado | Coincidem com ficha atual do Maps |
 | 55 | Serviços | Atenção | Texto conservador; catálogo oficial pendente |
-| 56 | Fotos autorizadas | Atenção | Poster remoto precisa de autorização/licença verificada |
+| 56 | Fotos autorizadas | Aprovado | Poster original gerado para o projeto; não representa a clínica ou paciente real |
 | 57 | Equipe/profissionais | Atenção | Sem credenciais ou equipe publicadas |
 | 58 | Avaliações sem fabricação | Aprovado | Excertos de fonte pública, identificados |
 | 59 | Conteúdo local | Aprovado | Centro de Florianópolis e Estação Milano incorporados |
@@ -104,3 +104,4 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 - Simulador público: **Aprovado** — três escolhas produziram resumo local com “Conhecer a clínica”, “Primeira visita” e “Manhã”.
 - Formulário público: **Aprovado** — dados fictícios e consentimento produziram o estado “Demonstração local: nada foi enviado”.
 - Auditoria mobile: **Atenção** — CSS responsivo está implementado, mas o ambiente não ofereceu viewport móvel automatizado nesta sessão.
+
