@@ -66,10 +66,10 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 | 58 | Avaliações sem fabricação | Aprovado | Excertos de fonte pública, identificados |
 | 59 | Conteúdo local | Aprovado | Centro de Florianópolis e Estação Milano incorporados |
 | 60 | Conteúdo regulamentado | Atenção | Claims clínicos evitados; revisão profissional pendente |
-| 61 | Teste desktop | Aprovado | Navegador real confirmou home, links, simulador e formulário |
+| 61 | Teste desktop | Aprovado | Navegador real confirmou home, links, agente independente e formulário |
 | 62 | Teste mobile | Atenção | Executar auditoria visual real |
 | 63 | Todos os formulários | Aprovado | Formulário preenchido com dados fictícios; estado local confirmado |
-| 64 | Todos os CTAs | Aprovado | Hero, simulador, contato, rotas e política verificados no navegador |
+| 64 | Todos os CTAs | Aprovado | Hero, agente independente, contato, rotas, Instagram e política verificados no navegador |
 | 65 | Links externos | Aprovado | Google Maps e links públicos resolvidos na página publicada |
 | 66 | WhatsApp/telefone/e-mail | Atenção | Telefone linkado; WhatsApp e e-mail não confirmados |
 | 67 | Auditoria SEO | Atenção | Metadata e schema preparados; Lighthouse pendente |
@@ -83,13 +83,13 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 
 - index.html: estrutura semântica, vídeo com autoplay muted loop playsinline poster, JSON-LD, CTAs, FAQ, localização e formulário.
 - styles.css: tokens, contraste, foco, responsividade, reduced motion e reserva de espaço.
-- script.js: simulador, estados de erro/sucesso, eventos locais e menu móvel.
+- script.js: estados de erro/sucesso do formulário, eventos locais e menu móvel.\n- agente-simulador/app.js: respostas locais por intenção, fallback para perguntas livres e reinício da conversa.
 - tests/site-smoke.mjs: verificação automatizada de elementos essenciais.
 
 ## Bloqueadores antes de READY FOR PRODUCTION
 
 1. Confirmar Instagram, WhatsApp, credenciais, serviços e logo oficial.
-2. Substituir URLs example.github.io pelo domínio/repositório real.
+2. Decidir se será usado domínio próprio ou a URL padrão do GitHub Pages.
 3. Confirmar licença/autorização do vídeo e poster ou fornecer mídia própria.
 4. Executar auditoria em navegador real desktop/mobile e corrigir achados.
 5. Definir destino seguro para formulário, analytics e LeadPilot antes de ativar integrações.
@@ -101,9 +101,12 @@ Legenda: Aprovado = evidência real disponível; Atenção = preparado, mas depe
 - Servidor local e requisições HTTP para `/`, `/privacy.html`, `/404.html`, `/styles.css` e `/script.js`: **Aprovado** — respostas 200.
 - Navegador integrado em desktop/mobile: **Atenção** — o ambiente bloqueou a abertura de páginas locais por política de URL; não foi possível registrar screenshots ou interação real nesta etapa.
 - Página pública em navegador real: **Aprovado** — https://leandroramos1985.github.io/jordana-de-faveri-clinica-estetica/ abriu com conteúdo, navegação e formulário.
-- Simulador público: **Aprovado** — três escolhas produziram resumo local com “Conhecer a clínica”, “Primeira visita” e “Manhã”.
+- Agente independente público: **Aprovado** — pergunta sugerida sobre localização e pergunta livre sobre estacionamento produziram respostas no chat externo ao site.
 - Formulário público: **Aprovado** — dados fictícios e consentimento produziram o estado “Demonstração local: nada foi enviado”.
+- Site institucional: **Aprovado** — o simulador foi removido do site; os CTAs apontam para a experiência independente.
 - Auditoria mobile: **Atenção** — CSS responsivo está implementado, mas o ambiente não ofereceu viewport móvel automatizado nesta sessão.
+
+
 
 
 
