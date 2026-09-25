@@ -31,46 +31,6 @@ const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserv
 }, { threshold: 0.12 }) : null;
 $$('.reveal').forEach((element) => revealObserver?.observe(element));
 
-const simulator = $('[data-simulator]');
-const simulatorState = { answers: [] };
-const stepNumber = $('[data-step-number]', simulator);
-const progress = $('[data-progress]', simulator);
-const summary = $('[data-summary]', simulator);
-const panels = $$('[data-panel]', simulator);
-
-const showPanel = (name) => {
-  panels.forEach((panel) => { panel.hidden = panel.dataset.panel !== name; });
-  const index = name === 'result' ? 3 : Number(name);
-  if (stepNumber) stepNumber.textContent = String(Math.min(index, 3));
-  if (progress) progress.style.width = String(Math.min(index, 3) * 33.333) + '%';
-};
-
-const renderSummary = () => {
-  if (!summary) return;
-  summary.innerHTML = '<strong>Seu ponto de partida</strong>' + simulatorState.answers.map((answer) => '<div>' + answer + '</div>').join('');
-};
-
-$$('[data-choice]', simulator).forEach((choice) => choice.addEventListener('click', () => {
-  simulatorState.answers.push(choice.dataset.choice);
-  track('simulator_step_complete', { step: simulatorState.answers.length, choice: choice.dataset.choice });
-  if (simulatorState.answers.length < 3) {
-    showPanel(String(simulatorState.answers.length + 1));
-  } else {
-    renderSummary();
-    showPanel('result');
-    track('simulator_complete');
-  }
-}));
-$$('[data-back]', simulator).forEach((button) => button.addEventListener('click', () => {
-  simulatorState.answers.pop();
-  showPanel(String(simulatorState.answers.length + 1));
-}));
-$('[data-restart]', simulator)?.addEventListener('click', () => {
-  simulatorState.answers.length = 0;
-  showPanel('1');
-  track('simulator_restart');
-});
-
 const form = $('#contact-form');
 const setError = (name, message = '') => {
   const field = $('#' + name)?.closest('.form-field');
@@ -109,3 +69,4 @@ $('[data-privacy-close]')?.addEventListener('click', () => dialog?.close());
 dialog?.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
 
 $$('a[href^="#"]').forEach((link) => link.addEventListener('click', () => track('cta_click', { destination: link.getAttribute('href') })));
+
