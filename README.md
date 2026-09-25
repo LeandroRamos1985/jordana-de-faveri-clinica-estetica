@@ -21,4 +21,4 @@ O simulador e o formulário não transmitem dados. Analytics, LeadPilot, envio d
 
 ## Publicação
 
-Crie um repositório, copie estes arquivos para a raiz, habilite GitHub Pages para a branch principal e substitua os URLs `example.github.io` em `index.html`, `robots.txt` e `sitemap.xml` pelo domínio real. Depois repita a auditoria descrita em `docs/auditoria-72-itens.md`.
+O repositório público está em https://github.com/LeandroRamos1985/jordana-de-faveri-clinica-estetica e a demonstração está em https://leandroramos1985.github.io/jordana-de-faveri-clinica-estetica/. Depois repita a auditoria descrita em `docs/auditoria-72-itens.md` após qualquer troca de domínio.
